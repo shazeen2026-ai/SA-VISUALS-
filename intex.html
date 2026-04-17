@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SA VISUALS | Creative Graphic Design Studio</title>
+  <meta
+    name="description"
+    content="SA VISUALS is a creative graphic design studio based in Malwana, Sri Lanka. Logo design, branding, social media posts, flyers, posters and more."
+  />
+  <style>
+    :root {
+      --bg: #060606;
+      --bg-soft: #0d0d0d;
+      --card: rgba(17, 17, 17, 0.82);
+      --text: #ffffff;
+      --muted: #bdbdbd;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.18);
+      --border: rgba(212, 175, 55, 0.22);
+      --shadow: 0 15px 45px rgba(212, 175, 55, 0.08);
+      --radius: 24px;
+      --radius-lg: 32px;
+      --transition: 0.35s ease;
+      --max: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 22%),
+        linear-gradient(180deg, #080808 0%, #030303 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(90%, var(--max));
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 5, 5, 0.78);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.03));
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.08);
+      overflow: hidden;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      color: #8e8e8e;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #ebebeb;
+      font-size: 15px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    .menu a:hover {
+      color: var(--gold);
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 0 70px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    }
+
+    .glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.16), transparent 60%);
+      filter: blur(18px);
+      pointer-events: none;
+      z-index: 0;
+      animation: floatGlow 7s ease-in-out infinite;
+    }
+
+    .glow.one {
+      top: -80px;
+      left: -80px;
+    }
+
+    .glow.two {
+      right: -100px;
+      bottom: 0;
+      animation-delay: 1.5s;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.24);
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 18px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 16px var(--gold);
+    }
+
+    .hero h1 {
+      font-size: 62px;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      animation: fadeUp 1s ease both;
+      animation-delay: 0.08s;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      text-shadow: 0 0 18px rgba(212, 175, 55, 0.12);
+    }
+
+    .hero p {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.95;
+      margin-bottom: 30px;
+      animation: fadeUp 1.1s ease both;
+      animation-delay: 0.16s;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 1.15s ease both;
+      animation-delay: 0.24s;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid transparent;
+      font-size: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #e5c35a, #d4af37);
+      color: #000;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(212, 175, 55, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--gold);
+      border-color: rgba(212, 175, 55, 0.32);
+      background: rgba(212, 175, 55, 0.03);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .hero-card {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(22, 22, 22, 0.95), rgba(10, 10, 10, 0.95));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      animation: zoomIn 1s ease both;
+      animation-delay: 0.2s;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.24), transparent 60%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .hero-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .hero-head p {
+      margin: 0;
+      font-size: 14px;
+      color: #8f8f8f;
+    }
+
+    .hero-head h3 {
+      color: var(--gold);
+      font-size: 30px;
+      margin-top: 8px;
+    }
+
+    .hero-pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      color: var(--gold);
+      font-size: 12px;
+      background: rgba(212, 175, 55, 0.05);
+      white-space: nowrap;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      border-radius: 18px;
+      padding: 20px;
+      transition: var(--transition);
+    }
+
+    .mini-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.26);
+    }
+
+    .mini-card.full {
+      grid-column: 1 / -1;
+    }
+
+    .mini-card .small {
+      font-size: 13px;
+      color: #8e8e8e;
+      margin-bottom: 9px;
+    }
+
+    .mini-card .big {
+      font-size: 17px;
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title p {
+      color: var(--gold);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    .section-title.left {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .about-left h3,
+    .contact-left h3 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-left p,
+    .contact-left p {
+      color: var(--muted);
+      line-height: 1.95;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .glass-card,
+    .stat-box,
+    .service-card,
+    .portfolio-card,
+    .testimonial-card,
+    .contact-form {
+      background: linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.95));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .stat-box {
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.36);
+    }
+
+    .stat-box h4 {
+      color: var(--gold);
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .stat-box p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .stat-box.full {
+      grid-column: 1 / -1;
+    }
+
+    .services-section,
+    .testimonials-section {
+      background:
+        radial-gradient(circle at center, rgba(212, 175, 55, 0.04), transparent 35%),
+        #090909;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    }
+
+    .service-card,
+    .testimonial-card {
+      padding: 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before,
+    .testimonial-card::before,
+    .portfolio-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(212,175,55,0.06), transparent 40%);
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+    }
+
+    .service-card:hover,
+    .testimonial-card:hover,
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.52);
+    }
+
+    .service-card:hover::before,
+    .testimonial-card:hover::before,
+    .portfolio-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card h3 {
+      color: var(--gold);
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .service-card p,
+    .testimonial-card p {
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .service-price {
+      margin-top: 18px;
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .portfolio-content {
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-category {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-content h4 {
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .testimonial-card h4 {
+      color: var(--gold);
+      margin-top: 18px;
+      font-size: 20px;
+    }
+
+    .contact-info {
+      margin-top: 24px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .contact-info span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .contact-info a {
+      color: var(--muted);
+      transition: var(--transition);
+    }
+
+    .contact-info a:hover {
+      color: var(--gold);
+    }
+
+    .contact-form {
+      padding: 28px;
+      position: relative;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px 16px;
+      margin-bottom: 16px;
+      border-radius: 16px;
+      border: 1px solid #2c2c2c;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(212, 175, 55, 0.65);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+    }
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      color: #8d8d8d;
+      text-align: center;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      background: linear-gradient(180deg, #e5c35a, #d4af37);
+      color: #000;
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 14px 34px rgba(212, 175, 55, 0.22);
+      animation: pulseBtn 2.2s infinite;
+      transition: var(--transition);
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.02);
+      animation-play-state: paused;
+    }
+
+    .manual-note {
+      margin-top: 14px;
+      color: #8d8d8d;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes floatGlow {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px);
+      }
+      50% {
+        transform: translateY(22px) translateX(12px);
+      }
+    }
+
+    @keyframes pulseBtn {
+      0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.35), 0 14px 34px rgba(212, 175, 55, 0.22);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(212, 175, 55, 0), 0 14px 34px rgba(212, 175, 55, 0.22);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), 0 14px 34px rgba(212, 175, 55, 0.22);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 85px 0 60px;
+      }
+
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .mini-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-card.full,
+      .stat-box.full {
+        grid-column: auto;
+      }
+
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .section-title h2,
+      .about-left h3,
+      .contact-left h3 {
+        font-size: 29px;
+      }
+
+      .hero-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-title {
+        font-size: 20px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    const siteData = {
+      brandName: "SA VISUALS",
+      logoText: "SA",
+      logoImage: "", // Example: "images/logo.png"
+      tagline: "Creative Designs for Modern Brands",
+      shortDescription:
+        "SA VISUALS creates clean, professional and modern graphic designs for businesses, personal brands and growing startups. From logos to social media designs, every visual is made to leave a strong impression.",
+
+      aboutTitle: "Professional design solutions for growing brands",
+      aboutText1:
+        "SA VISUALS is a creative graphic design brand based in Malwana, Sri Lanka. The studio focuses on building clean, professional and visually strong designs for businesses, startups and personal brands. Every project is designed with care, creative thinking and attention to detail so the final result feels modern, polished and trustworthy.",
+      aboutText2:
+        "This website is built to showcase design work in a clear and professional way, while still giving the owner the freedom to manually add new designs to the portfolio section anytime. Visitors can explore the work, understand the services and directly contact SA VISUALS through WhatsApp for fast communication and project inquiries.",
+
+      whatsappNumber: "94775498842",
+      whatsappDisplay: "0775498842",
+      callNumber: "0777542002",
+      email: "shazeen2026@gmail.com",
+      location: "SA VISUALS, Malwana, Sri Lanka",
+
+      instagramText: "@sa_visuals",
+      instagramLink: "https://instagram.com/",
+
+      whatsappMessage:
+        "Hi SA VISUALS, I want a design for my business.",
+
+      services: [
+        {
+          title: "Logo Design",
+          description:
+            "Modern, memorable and professional logo designs crafted for businesses and personal brands.",
+          price: "Starting from LKR 4,000",
+        },
+        {
+          title: "Social Media Post Design",
+          description:
+            "Creative and eye-catching post designs for Instagram, Facebook and business promotions.",
+          price: "Starting from LKR 800",
+        },
+        {
+          title: "Brand Identity",
+          description:
+            "Consistent visual branding with colors, typography and premium design direction.",
+          price: "Custom Pricing",
+        },
+        {
+          title: "Flyers & Posters",
+          description:
+            "Clean and impactful flyer and poster designs for marketing, events and promotions.",
+          price: "Starting from LKR 3,000",
+        },
+        {
+          title: "Business Card Design",
+          description:
+            "Professional business card designs that help your brand look polished and trustworthy.",
+          price: "Starting from LKR 2,500",
+        },
+        {
+          title: "YouTube Thumbnail Design",
+          description:
+            "Bold thumbnails designed to improve clicks, attention and visual impact.",
+          price: "Starting from LKR 700",
+        },
+      ],
+
+      portfolio: [
+        {
+          title: "Luxury Brand Logo",
+          category: "Logo Design",
+          image:
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          title: "Social Media Campaign",
+          category: "Social Media Design",
+          image:
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          title: "Creative Poster Concept",
+          category: "Poster Design",
+          image:
+            "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          title: "Brand Identity Showcase",
+          category: "Branding",
+          image:
+            "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=900&q=80",
+        },
+      ],
+
+      testimonials: [
+        {
+          name: "Brand Client",
+          text: "Professional work, clean communication and a design style that made our brand look premium.",
+        },
+        {
+          name: "Business Owner",
+          text: "SA VISUALS created beautiful designs with a modern feel. The final result looked very polished.",
+        },
+        {
+          name: "Social Media Client",
+          text: "Creative, fast and professional. The designs were eye-catching and matched the brand perfectly.",
+        },
+      ],
+    };
+  </script>
+
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo-box" id="logoBox">SA</div>
+        <div>
+          <div class="brand-title" id="brandName">SA VISUALS</div>
+          <div class="brand-sub">Creative Graphic Design Studio</div>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Creative • Clean • Premium</div>
+        <h1>Creative visuals that make your <span>brand stand out</span></h1>
+        <p id="shortDescription"></p>
+
+        <div class="hero-buttons">
+          <a id="heroWhatsappBtn" class="btn btn-primary" target="_blank">Chat on WhatsApp</a>
+          <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-head">
+          <div>
+            <p>Featured Brand</p>
+            <h3 id="heroBrandName">SA VISUALS</h3>
+          </div>
+          <div class="hero-pill">Sri Lanka</div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <div class="small">Specialized In</div>
+            <div class="big">Logo & Visual Branding</div>
+          </div>
+          <div class="mini-card">
+            <div class="small">Creative Focus</div>
+            <div class="big">Social Media & Print Design</div>
+          </div>
+          <div class="mini-card full">
+            <div class="small">Design Style</div>
+            <div class="big">Clean layouts, premium presentation and modern black-and-gold branding style.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="about">
+    <div class="container grid-2">
+      <div class="about-left">
+        <div class="section-title left">
+          <p>About Studio</p>
+        </div>
+        <h3 id="aboutTitle"></h3>
+        <p id="aboutText1"></p>
+        <p id="aboutText2"></p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <h4>Creative</h4>
+          <p>Modern design ideas for brands, marketing and promotions.</p>
+        </div>
+        <div class="stat-box">
+          <h4>Direct</h4>
+          <p>WhatsApp contact for quick client communication.</p>
+        </div>
+        <div class="stat-box full">
+          <h4 style="font-size:22px; color:#fff;">Studio Tools</h4>
+          <p>Adobe Photoshop • Adobe Illustrator • Canva</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services-section reveal" id="services">
+    <div class="container">
+      <div class="section-title">
+        <p>Services</p>
+        <h2>Services by SA VISUALS</h2>
+      </div>
+
+      <div class="grid-3" id="servicesContainer"></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <p>Portfolio</p>
+        <h2>Selected design showcase</h2>
+      </div>
+
+      <div class="grid-4" id="portfolioContainer"></div>
+      <p class="manual-note">Portfolio images, names and categories can be changed easily inside the code.</p>
+    </div>
+  </section>
+
+  <section class="section testimonials-section reveal">
+    <div class="container">
+      <div class="section-title">
+        <p>Testimonials</p>
+        <h2>Client impressions</h2>
+      </div>
+
+      <div class="grid-3" id="testimonialsContainer"></div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="contact">
+    <div class="container grid-2">
+      <div class="contact-left">
+        <div class="section-title left">
+          <p>Contact</p>
+        </div>
+        <h3>Let’s build your next design project</h3>
+        <p>
+          Need a logo, social media design, poster, flyer or full branding support?
+          Contact SA VISUALS directly and start your project quickly through WhatsApp,
+          phone or email.
+        </p>
+
+        <div class="contact-info">
+          <p><span>Brand:</span> <span id="contactBrand" style="color:#cfcfcf; font-weight:normal;"></span></p>
+          <p><span>Email:</span> <span id="contactEmail" style="color:#cfcfcf; font-weight:normal;"></span></p>
+          <p><span>Location:</span> <span id="contactLocation" style="color:#cfcfcf; font-weight:normal;"></span></p>
+          <p><span>WhatsApp:</span> <span id="contactWhatsapp" style="color:#cfcfcf; font-weight:normal;"></span></p>
+          <p><span>Call:</span> <span id="contactCall" style="color:#cfcfcf; font-weight:normal;"></span></p>
+          <p>
+            <span>Instagram:</span>
+            <a id="instagramLink" href="#" target="_blank" rel="noreferrer"></a>
+          </p>
+        </div>
+
+        <div style="margin-top:24px;">
+          <a id="contactWhatsappBtn" class="btn btn-primary" target="_blank">Contact on WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email Address" required />
+          <input type="text" id="service" placeholder="Service Needed" required />
+          <textarea id="message" rows="5" placeholder="Tell us about your project" required></textarea>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry to WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p id="footerText"></p>
+    </div>
+  </footer>
+
+  <a id="floatingWhatsapp" class="floating-whatsapp" target="_blank">WhatsApp</a>
+
+  <script>
+    const whatsappLink = `https://wa.me/${siteData.whatsappNumber}?text=${encodeURIComponent(siteData.whatsappMessage)}`;
+
+    document.getElementById("brandName").textContent = siteData.brandName;
+    document.getElementById("heroBrandName").textContent = siteData.brandName;
+    document.getElementById("shortDescription").textContent = siteData.shortDescription;
+    document.getElementById("aboutTitle").textContent = siteData.aboutTitle;
+    document.getElementById("aboutText1").textContent = siteData.aboutText1;
+    document.getElementById("aboutText2").textContent = siteData.aboutText2;
+
+    document.getElementById("contactBrand").textContent = siteData.brandName;
+    document.getElementById("contactEmail").textContent = siteData.email;
+    document.getElementById("contactLocation").textContent = siteData.location;
+    document.getElementById("contactWhatsapp").textContent = siteData.whatsappDisplay;
+    document.getElementById("contactCall").textContent = siteData.callNumber;
+
+    const insta = document.getElementById("instagramLink");
+    insta.href = siteData.instagramLink;
+    insta.textContent = siteData.instagramText;
+
+    document.getElementById("heroWhatsappBtn").href = whatsappLink;
+    document.getElementById("contactWhatsappBtn").href = whatsappLink;
+    document.getElementById("floatingWhatsapp").href = whatsappLink;
+
+    document.getElementById("footerText").textContent = `© 2026 ${siteData.brandName}. All rights reserved.`;
+
+    const logoBox = document.getElementById("logoBox");
+    if (siteData.logoImage && siteData.logoImage.trim() !== "") {
+      logoBox.innerHTML = `<img src="${siteData.logoImage}" alt="Logo" />`;
+    } else {
+      logoBox.textContent = siteData.logoText;
+    }
+
+    const servicesContainer = document.getElementById("servicesContainer");
+    siteData.services.forEach((service, index) => {
+      servicesContainer.innerHTML += `
+        <div class="service-card reveal" style="transition-delay:${index * 0.06}s">
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <div class="service-price">${service.price}</div>
+        </div>
+      `;
+    });
+
+    const portfolioContainer = document.getElementById("portfolioContainer");
+    siteData.portfolio.forEach((item, index) => {
+      portfolioContainer.innerHTML += `
+        <div class="portfolio-card reveal" style="transition-delay:${index * 0.06}s">
+          <img src="${item.image}" alt="${item.title}">
+          <div class="portfolio-content">
+            <div class="portfolio-category">${item.category}</div>
+            <h4>${item.title}</h4>
+          </div>
+        </div>
+      `;
+    });
+
+    const testimonialsContainer = document.getElementById("testimonialsContainer");
+    siteData.testimonials.forEach((item, index) => {
+      testimonialsContainer.innerHTML += `
+        <div class="testimonial-card reveal" style="transition-delay:${index * 0.06}s">
+          <p>“${item.text}”</p>
+          <h4>${item.name}</h4>
+        </div>
+      `;
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const formMessage =
+        `Hi ${siteData.brandName},%0A%0A` +
+        `My Name: ${name}%0A` +
+        `My Email: ${email}%0A` +
+        `Service Needed: ${service}%0A` +
+        `Project Details: ${message}`;
+
+      window.open(`https://wa.me/${siteData.whatsappNumber}?text=${formMessage}`, "_blank");
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
